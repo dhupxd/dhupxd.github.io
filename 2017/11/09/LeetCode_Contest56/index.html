@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="LeetCode_Contest56"/>
+
+
+
+
+  <meta name="keywords" content="二分，滑动窗口," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="pxd blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/2017/11/09/LeetCode_Contest56/"/>
+
+
+<meta name="description" content="719. Find K-th Smallest Pair DistanceGiven an integer array, return the k-th smallest distance among all the pairs. The distance of a pair (A, B) is defined as the absolute difference between A and B.">
+<meta name="keywords" content="二分，滑动窗口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode_Contest56">
+<meta property="og:url" content="http://yoursite.com/2017/11/09/LeetCode_Contest56/index.html">
+<meta property="og:site_name" content="pxd blog">
+<meta property="og:description" content="719. Find K-th Smallest Pair DistanceGiven an integer array, return the k-th smallest distance among all the pairs. The distance of a pair (A, B) is defined as the absolute difference between A and B.">
+<meta property="og:updated_time" content="2017-11-09T12:38:41.212Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode_Contest56">
+<meta name="twitter:description" content="719. Find K-th Smallest Pair DistanceGiven an integer array, return the k-th smallest distance among all the pairs. The distance of a pair (A, B) is defined as the absolute difference between A and B.">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> LeetCode_Contest56 - pxd blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">pxd blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          LeetCode_Contest56
+        
+      </h1>
+
+      <time class="post-time">
+          11月 9 2017
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h4 id="719-Find-K-th-Smallest-Pair-Distance"><a href="#719-Find-K-th-Smallest-Pair-Distance" class="headerlink" title="719. Find K-th Smallest Pair Distance"></a>719. Find K-th Smallest Pair Distance</h4><p>Given an integer array, return the k-th smallest distance among all the pairs. The distance of a pair (A, B) is defined as the absolute difference between A and B.</p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example:"></a><strong>Example</strong>:</h3><p>Input:nums = [1,3,1]  k = 1</p>
+<p>Output: 0 </p>
+<h4 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation:"></a><strong>Explanation</strong>:</h4><p>Here are all the pairs:</p>
+<p> (1,3) -&gt; 2</p>
+<p> (1,1) -&gt; 0</p>
+<p> (3,1) -&gt; 2</p>
+<p>Then the 1st smallest distance pair is (1,1), and its distance is 0.</p>
+<h4 id="Note"><a href="#Note" class="headerlink" title="Note:"></a><strong>Note</strong>:</h4><p>2 &lt;= len(nums) &lt;= 10000.</p>
+<p>0 &lt;= nums[i] &lt; 1000000.</p>
+<p>1 &lt;= k &lt;= len(nums) * (len(nums) - 1) / 2.</p>
+<h4 id="cpp-code"><a href="#cpp-code" class="headerlink" title="cpp_code:"></a><strong>cpp_code</strong>:</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">f_abs</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> x &gt; <span class="number">0</span> ? x : -x;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">count</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> mid)</span></span>&#123;</div><div class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> n = nums.size();</div><div class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</div><div class="line">        <span class="comment">//寻找i前面与nums[i]差值刚好不大于mid的j，找i+1的时候直接就在j的基础上往后找，利用了滑动窗口的思想</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)&#123;</div><div class="line">            <span class="keyword">while</span>(j &lt; i &amp;&amp; (nums[i] - nums[j]) &gt; mid) j++;</div><div class="line">            cnt += (i - j);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> cnt;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">smallestDistancePair</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> k)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> n = nums.size();</div><div class="line">        sort(nums.begin(),nums.end());</div><div class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</div><div class="line">        <span class="keyword">int</span> right = nums[n<span class="number">-1</span>] - nums[<span class="number">0</span>];</div><div class="line">        <span class="comment">//二分，若小于差值mid的个数小于k，则需要将差值增大，反之，则减小。</span></div><div class="line">        <span class="keyword">while</span>(left &lt; right)&#123;</div><div class="line">            <span class="keyword">int</span> mid = (right + left) / <span class="number">2</span>;</div><div class="line">            <span class="keyword">if</span>(count(nums, mid) &lt; k)&#123;</div><div class="line">                left = mid + <span class="number">1</span>;</div><div class="line">            &#125;<span class="keyword">else</span>&#123;</div><div class="line">                right = mid;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> left;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/二分，滑动窗口/">二分，滑动窗口</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2017/11/15/LeetCode_Contest58/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">LeetCode_Contest58</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+      <a class="next" href="/2017/11/08/win10安装双系统ubuntu16/">
+        <span class="next-text nav-default">win10安装双系统ubuntu16</span>
+        <span class="prev-text nav-mobile">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2018
+    <span class="footer-author">dhupxd.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
