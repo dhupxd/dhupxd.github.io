@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="小米4刷机+虚拟键安装"/>
+
+
+
+
+  <meta name="keywords" content="刷机，虚拟键," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="pxd blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="http://yoursite.com/android/小米4刷机+虚拟键安装/"/>
+
+
+<meta name="description" content="前几天手机坏了，致使我学会了刷机。。呵呵哒，是这样的，手机摔地上了，下面一排按键失灵，就想着要装虚拟按键来代替。但是查到的资料都说需要获得root权限，但是我的手机是稳定版的无法获得，所以我就决定刷成最新开发版，直接可以授权root给应用。那到底是什么软件需要root权限呢，答案就是RE文件管理系统，我需要在根目录下的system\build.prop好象是叫这个，该文件末尾加上一句代码即可，该代">
+<meta name="keywords" content="刷机，虚拟键">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小米4刷机+虚拟键安装">
+<meta property="og:url" content="http://yoursite.com/android/小米4刷机+虚拟键安装/index.html">
+<meta property="og:site_name" content="pxd blog">
+<meta property="og:description" content="前几天手机坏了，致使我学会了刷机。。呵呵哒，是这样的，手机摔地上了，下面一排按键失灵，就想着要装虚拟按键来代替。但是查到的资料都说需要获得root权限，但是我的手机是稳定版的无法获得，所以我就决定刷成最新开发版，直接可以授权root给应用。那到底是什么软件需要root权限呢，答案就是RE文件管理系统，我需要在根目录下的system\build.prop好象是叫这个，该文件末尾加上一句代码即可，该代">
+<meta property="og:updated_time" content="2017-05-20T15:46:57.077Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小米4刷机+虚拟键安装">
+<meta name="twitter:description" content="前几天手机坏了，致使我学会了刷机。。呵呵哒，是这样的，手机摔地上了，下面一排按键失灵，就想着要装虚拟按键来代替。但是查到的资料都说需要获得root权限，但是我的手机是稳定版的无法获得，所以我就决定刷成最新开发版，直接可以授权root给应用。那到底是什么软件需要root权限呢，答案就是RE文件管理系统，我需要在根目录下的system\build.prop好象是叫这个，该文件末尾加上一句代码即可，该代">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+    <title> 小米4刷机+虚拟键安装 - pxd blog </title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  </head>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">pxd blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/archives">
+                            
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          小米4刷机+虚拟键安装
+        
+      </h1>
+
+      <time class="post-time">
+          11月 8 2016
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <p>前几天手机坏了，致使我学会了刷机。。呵呵哒，是这样的，手机摔地上了，下面一排按键失灵，就想着要装虚拟按键来代替。但是查到的资料都说需要获得root权限，但是我的手机是稳定版的无法获得，所以我就决定刷成最新开发版，直接可以授权root给应用。那到底是什么软件需要root权限呢，答案就是RE文件管理系统，我需要在根目录下的system\build.prop好象是叫这个，该文件末尾加上一句代码即可，该代码是qemu.hw.mainkeys=0，看着似乎很简单，但是实际操作过程中还是遇到很多问题，build.prop文件不能随便乱改权限，他的权限只能是644，否则会造成系统出错，开机的时候不断重启。还有一个问题是build.prop文件不能直接在根目录下改，需要复制到sdcard目录下改，但是改了之后会发现它保存不了，因为外存不能对进行写操作，后来终于想了一个办法，就是拖到电脑里改，改完再复制回去就可以了。此方法亲测有效。对了，刷机用线刷包刷比较简单，只要在Miphone添加线刷包的路径即可。</p>
+<p>不幸总喜欢与我为伍，虚拟键装好还没有得瑟够2天，它又摔了，屏幕已经失掉半壁江山了，我也只能重新买个手机或是装一个屏幕了。</p>
+
+            </div>
+          
+
+    
+      <footer class="post-footer">
+        <div class="post-tags">
+          
+            <a href="/tags/刷机，虚拟键/">刷机，虚拟键</a>
+          
+        </div>
+
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/uncategorized/hello-world/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Hello World</span>
+        <span class="prev-text nav-mobile">Prev</span>
+      </a>
+    
+    
+  </nav>
+
+        
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+      </footer>
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2014 -
+    
+    2018
+    <span class="footer-author">dhupxd.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/frostfan/hexo-theme-polarbear">Polar Bear</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+  </body>
+</html>
